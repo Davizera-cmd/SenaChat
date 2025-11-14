@@ -21,8 +21,8 @@
 
 
 .botao-voltar {
-    width: 44px;
-    height: 44px;
+    width: var(--size-icon-md);
+    height: var(--size-icon-md);
     border-radius: 50%;
     backdrop-filter: blur(10px);
     border: 1.5px solid var(--color-primary-border);
@@ -34,8 +34,8 @@
 }
 
 .botao-acessibilidade {
-    width: 44px;
-    height: 44px;
+    width: var(--size-icon-md);
+    height: var(--size-icon-md);
     border-radius: 50%;
     backdrop-filter: blur(10px);
     border: 1.5px solid var(--color-primary-border);
@@ -77,8 +77,8 @@
 
     .botao-voltar,
     .botao-acessibilidade {
-        width: 70px;
-        height: 70px;
+        width: var(--size-icon-lg);
+        height: var(--size-icon-lg);
     }
 
     .logo-senachat {

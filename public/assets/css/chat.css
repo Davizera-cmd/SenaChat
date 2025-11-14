@@ -1,3 +1,4 @@
+
 .pagina-chat{
     min-height: 100vh;
     background: var(--gradient-primary);
@@ -5,4 +6,150 @@
     flex-direction: column;
     position: relative;
     overflow: hidden;
+}
+
+.area-mensagens {
+    flex: 1; 
+    overflow-y: auto; 
+    padding: var(--spacing-lg) var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    color: var(--color-white); 
+}
+
+.mensagem-balao {
+    padding: var(--spacing-md) 1.25rem; 
+    border-radius: 20px; 
+    max-width: 80%;
+    line-height: 1.5;
+    font-family: var(--font-family-primary);
+    font-size: 0.9rem;
+    word-wrap: break-word; 
+}
+
+.mensagem-balao.usuario {
+    background-color: var(--color-accent-purple-dark); 
+    color: var(--color-white);
+    align-self: flex-end; 
+    border-bottom-right-radius: var(--radius-md); 
+}
+
+.mensagem-balao.bot {
+    background-color: var(--color-primary); 
+    color: var(--color-gray-200); 
+    align-self: flex-start; 
+    border-bottom-left-radius: var(--radius-md); 
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm); 
+}
+
+.mensagem-balao.bot .botao-audio {
+    background-color: var(--color-accent-purple-dark); 
+    border: none;
+    color: var(--color-white);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; 
+}
+
+.mensagem-balao.bot .botao-audio svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+}
+
+.area-input-pergunta {
+    padding: var(--spacing-md); 
+}
+
+.container-input {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full); 
+    padding: var(--spacing-sm) var(--spacing-md); 
+}
+
+.container-input input[type="text"] {
+    flex: 1; 
+    border: none;
+    background: transparent;
+    color: var(--color-white);
+    font-size: var(--font-size-base); 
+    padding: var(--spacing-sm);
+    font-family: var(--font-family-primary);
+}
+
+.container-input input[type="text"]::placeholder {
+    color: var(--color-accent-light); 
+}
+
+.container-input input[type="text"]:focus {
+    outline: none;
+}
+
+.botao-icone {
+    background: transparent;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    padding: var(--spacing-sm); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-icone svg {
+    width: 24px;
+    height: 24px;
+}
+
+.waveform-icon {
+    width: 28px;
+    height: 28px;
+    background-color: var(--color-accent-purple-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 0 8px; 
+}
+
+.waveform-icon .bar {
+    background-color: var(--color-white);
+    width: 2px;
+    border-radius: 2px;
+}
+.botao-waveform {
+    display: none;
+}
+#botao-enviar {
+    display: flex;
+}
+#botao-enviar:hover {
+    background-color: var(--color-primary-medium, #5A02BB);
+    border-radius: 50%;
+}
+
+.botao-waveform {
+display: none; 
+}
+
+
+#botao-enviar-wave {
+ display: flex; 
+}
+
+#botao-enviar-wave:hover,
+#botao-microfone:hover {
+background-color: var(--color-primary-medium, #5A02BB);
+border-radius: 50%;
 }

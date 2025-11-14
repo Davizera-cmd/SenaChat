@@ -100,8 +100,8 @@
 /* Indicador de áudio (ondas) */
 .indicador-audio {
     display: flex;
-    gap: 4px;
-    height: 40px;
+    gap: calc(4px * var(--scale-factor));
+    height: calc(40px * var(--scale-factor));
     align-items: center;
     opacity: 0;
     transition: opacity var(--transition-base);
@@ -112,9 +112,9 @@
 }
 
 .onda-audio {
-    width: 4px;
+    width: calc(4px * var(--scale-factor));
     background: var(--color-accent-pink);
-    border-radius: 2px;
+    border-radius: calc(2px * var(--scale-factor));
     animation: pulsar-onda 1s ease-in-out infinite;
 }
 
@@ -126,18 +126,18 @@
 
 @keyframes pulsar-onda {
     0%, 100% {
-        height: 10px;
+        height: calc(10px * var(--scale-factor));
     }
     50% {
-        height: 40px;
+        height: calc(40px * var(--scale-factor));
     }
 }
 
 /* Botão de Microfone */
 .botao-microfone {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: calc(100px * var(--scale-factor));
+    height: calc(100px * var(--scale-factor));
     background: transparent;
     border: none;
     cursor: pointer;
@@ -156,7 +156,7 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    border: 2px solid rgba(254, 41, 187, 0.3);
+    border: calc(2px * var(--scale-factor)) solid rgba(254, 41, 187, 0.3);
     transition: all var(--transition-base);
 }
 
@@ -167,7 +167,7 @@
 
 .circulo-interno {
     position: absolute;
-    inset: 8px;
+    inset: calc(8px * var(--scale-factor));
     border-radius: 50%;
     background: rgba(254, 41, 187, 0.2);
     backdrop-filter: blur(10px);
@@ -175,7 +175,7 @@
     align-items: center;
     justify-content: center;
     transition: all var(--transition-base);
-    border: 1px solid rgba(254, 41, 187, 0.3);
+    border: calc(1px * var(--scale-factor)) solid rgba(254, 41, 187, 0.3);
 }
 
 .botao-microfone:hover .circulo-interno {
@@ -262,8 +262,8 @@
     }
 
     .botao-microfone {
-        width: 120px;
-        height: 120px;
+        width: calc(120px * var(--scale-factor));
+        height: calc(120px * var(--scale-factor));
     }
 
     .texto-inicial {
@@ -273,12 +273,12 @@
 
 @media (min-width: 1024px) {
     .botao-microfone {
-        width: 140px;
-        height: 140px;
+        width: calc(140px * var(--scale-factor));
+        height: calc(140px * var(--scale-factor));
     }
 
     .icone-microfone {
-        width: 70px;
-        height: 70px;
+        width: calc(70px * var(--scale-factor));
+        height: calc(70px * var(--scale-factor));
     }
 }

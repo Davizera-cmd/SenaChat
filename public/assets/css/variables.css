@@ -1,8 +1,8 @@
-/* ========================================
-   Variáveis CSS - Design System
-   ======================================== */
+/* Variáveis CSS - Design System */
 
 :root {
+    --scale-factor: 1; /* 1 = 100%, 1.1 = 110%, 1.2 = 120%, etc. */
+    
     /* Paleta de Cores - Roxo Principal */
     --color-primary-dark: #1A0145;
     --color-primary: #3B018A;
@@ -16,6 +16,10 @@
     --color-primary-border-hover: rgba(255, 255, 255, 0.3);
     --color-primary-background-hover: rgba(255, 255, 255, 0.2);
     --color-secondary-background-icon: #573785;
+
+    --color-opcao-chat-background: rgba(255, 255, 255, 0.05);
+    --color-opcao-chat-background-hover: rgba(255, 255, 255, 0.1);
+    --color-opcao-chat-border: rgba(255, 255, 255, 0.1);
   
     /* Cores de Destaque */
     --color-accent-pink: #FE29BB;
@@ -67,33 +71,60 @@
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     
-    /* Font Sizes - Mobile First */
-    --font-size-xs: 0.75rem;      /* 12px */
-    --font-size-sm: 0.875rem;     /* 14px */
-    --font-size-base: 1rem;       /* 16px */
-    --font-size-lg: 1.125rem;     /* 18px */
-    --font-size-xl: 1.25rem;      /* 20px */
-    --font-size-2xl: 1.5rem;      /* 24px */
-    --font-size-3xl: 2rem;    /* 32px */
-    --font-size-4xl: 2.25rem;     /* 36px */
-    --font-size-5xl: 3rem;        /* 48px */
-    --font-size-6xl: 3.63rem;     /* 58px */
+    /* Font Sizes - Mobile First (escaláveis) */
+    --font-size-xs: calc(0.75rem * var(--scale-factor));      /* 12px */
+    --font-size-sm: calc(0.875rem * var(--scale-factor));     /* 14px */
+    --font-size-base: calc(1rem * var(--scale-factor));       /* 16px */
+    --font-size-lg: calc(1.125rem * var(--scale-factor));     /* 18px */
+    --font-size-xl: calc(1.25rem * var(--scale-factor));      /* 20px */
+    --font-size-2xl: calc(1.5rem * var(--scale-factor));      /* 24px */
+    --font-size-3xl: calc(2rem * var(--scale-factor));        /* 32px */
+    --font-size-4xl: calc(2.25rem * var(--scale-factor));     /* 36px */
+    --font-size-5xl: calc(3rem * var(--scale-factor));        /* 48px */
+    --font-size-6xl: calc(3.63rem * var(--scale-factor));     /* 58px */
+
+    /* Tamanhos de Componentes - Escaláveis */
+    /* Botões e Ícones */
+    --size-icon-sm: calc(32px * var(--scale-factor));         /* Ícones pequenos */
+    --size-icon-md: calc(44px * var(--scale-factor));         /* Botões mobile */
+    --size-icon-lg: calc(70px * var(--scale-factor));         /* Botões tablet+ */
+    --size-icon-xl: calc(80px * var(--scale-factor));         /* Ícones de cards */
+    --size-icon-2xl: calc(100px * var(--scale-factor));       /* Ícones grandes tablet */
+    --size-icon-3xl: calc(120px * var(--scale-factor));       /* Ícones grandes desktop */
     
-    /* Espaçamentos */
-    --spacing-xs: 0.25rem;    /* 4px */
-    --spacing-sm: 0.5rem;     /* 8px */
-    --spacing-md: 1rem;       /* 16px */
-    --spacing-lg: 1.5rem;     /* 24px */
-    --spacing-xl: 2rem;       /* 32px */
-    --spacing-2xl: 3rem;      /* 48px */
-    --spacing-3xl: 4rem;      /* 64px */
+    /* SVGs dentro de ícones */
+    --size-svg-sm: calc(20px * var(--scale-factor));
+    --size-svg-md: calc(32px * var(--scale-factor));
+    --size-svg-lg: calc(44px * var(--scale-factor));
+    --size-svg-xl: calc(50px * var(--scale-factor));
+    --size-svg-2xl: calc(54px * var(--scale-factor));
     
-    /* Border Radius */
-    --radius-sm: 0.25rem;     /* 4px */
-    --radius-md: 0.5rem;      /* 8px */
-    --radius-lg: 1rem;        /* 16px */
-    --radius-xl: 1.5rem;      /* 24px */
-    --radius-icone: 50px;     
+    /* Avatares e Fotos */
+    --size-avatar-sm: calc(40px * var(--scale-factor));
+    --size-avatar-md: calc(60px * var(--scale-factor));
+    --size-avatar-lg: calc(80px * var(--scale-factor));
+    --size-avatar-xl: calc(100px * var(--scale-factor));
+    
+    /* Cards e Containers */
+    --size-card-min-height-sm: calc(160px * var(--scale-factor));
+    --size-card-min-height-md: calc(220px * var(--scale-factor));
+    --size-card-min-height-lg: calc(250px * var(--scale-factor));
+    
+    /* Espaçamentos (escaláveis) */
+    --spacing-xs: calc(0.25rem * var(--scale-factor));    /* 4px */
+    --spacing-sm: calc(0.5rem * var(--scale-factor));     /* 8px */
+    --spacing-md: calc(1rem * var(--scale-factor));       /* 16px */
+    --spacing-lg: calc(1.5rem * var(--scale-factor));     /* 24px */
+    --spacing-xl: calc(2rem * var(--scale-factor));       /* 32px */
+    --spacing-2xl: calc(3rem * var(--scale-factor));      /* 48px */
+    --spacing-3xl: calc(4rem * var(--scale-factor));      /* 64px */
+    
+    /* Border Radius (escaláveis) */
+    --radius-sm: calc(0.25rem * var(--scale-factor));     /* 4px */
+    --radius-md: calc(0.5rem * var(--scale-factor));      /* 8px */
+    --radius-lg: calc(1rem * var(--scale-factor));        /* 16px */
+    --radius-xl: calc(3rem * var(--scale-factor));      /* 24px */
+    --radius-icone: calc(50px * var(--scale-factor));     
     --radius-full: 9999px;
     
     /* Sombras */
@@ -125,10 +156,10 @@
 /* Ajustes para Desktop */
 @media (min-width: 768px) {
     :root {
-        --font-size-3xl: 2.25rem;    /* 36px */
-        --font-size-4xl: 3rem;       /* 48px */
-        --font-size-5xl: 3.25rem;    /* 60px */
-        --font-size-6xl: 5.95rem;    /* 74px */
-        --container-padding: 2rem;
+        --font-size-3xl: calc(2.25rem * var(--scale-factor));    /* 36px */
+        --font-size-4xl: calc(3rem * var(--scale-factor));       /* 48px */
+        --font-size-5xl: calc(3.25rem * var(--scale-factor));    /* 60px */
+        --font-size-6xl: calc(5.95rem * var(--scale-factor));    /* 74px */
+        --container-padding: calc(2rem * var(--scale-factor));
     }
 }

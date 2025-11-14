@@ -96,8 +96,8 @@ import GeminiService from './services/gemini-service.js';
             pararGravacao();
         }
         
-        // Volta para index.html
-        window.location.href = './index.html';
+        // Volta para paginainicial.html
+        window.location.href = './paginainicial.html';
     }
 
     function abrirAcessibilidade() {

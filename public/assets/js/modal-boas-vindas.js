@@ -182,7 +182,7 @@
         modal.classList.add('modal-boas-vindas-fechando');
         
         setTimeout(() => {
-            window.location.href = 'index.html'; // 🚀 A MÁGICA ACONTECE AQUI!
+            window.location.href = 'paginainicial.html'; // 🚀 A MÁGICA ACONTECE AQUI!
         }, 350)
     }
 

@@ -10,10 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/css/componentes.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
@@ -23,9 +19,8 @@
 <body>
     <!-- Página de Conversa por Texto -->
     <main class="pagina-chat">
-        <!-- Cabeçalho -->
         <header class="cabecalho">
-            <a href="index.html" aria-label="Voltar para página inicial">
+            <a href="paginainicial.html" aria-label="Voltar para página inicial">
                 <button 
                     class="botao-voltar" 
                     type="button">
@@ -58,4 +53,48 @@
                 </svg>
             </button>
         </header>
+        <section class="area-mensagens" id="chat-container">
+            <!-- Mensagem do Usuário -->
+            <div class="mensagem-balao usuario">
+                <p>Como funciona o programa?</p>
+            </div>
+                <p>Lorem ipsum dolor sit amet. Qui error tenetur eum nostrum quis ut voluptatem cupiditate sit nisi voluptatem! Rem aperiam dicta et maxime nesciunt sed voluptas.</p>
+            </div>
+            
+
+        </section>
+        <footer class="area-input-pergunta">
+            <div class="container-input">
+                <input type="text" id="pergunta-input" placeholder="Faça a sua pergunta">
+                
+                <!-- Botão de Waveform (Parar/Enviar) -->
+                <button class="botao-icone botao-waveform" id="botao-parar" title="Parar gravação">
+                    <div class="waveform-icon">
+                        <span class="bar" style="height: 6px;"></span>
+                        <span class="bar" style="height: 14px;"></span>
+                        <span class="bar" style="height: 10px;"></span>
+                        <span class="bar" style="height: 16px;"></span>
+                        <span class="bar" style="height: 8px;"></span>
+                    </div>
+                <button class="botao-icone" id="botao-microfone" title="Iniciar gravação" type="button">
+                     <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 18.7291C17.1704 18.7291 19.3333 16.5662 19.3333 13.8958V7.24996C19.3333 4.57954 17.1704 2.41663 14.5 2.41663C11.8295 2.41663 9.66663 4.57954 9.66663 7.24996V13.8958C9.66663 16.5662 11.8295 18.7291 14.5 18.7291Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5.25623 11.6605V13.7147C5.25623 18.8139 9.40081 22.9584 14.5 22.9584C19.5991 22.9584 23.7437 18.8139 23.7437 13.7147V11.6605" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12.8204 7.76964C13.9079 7.37089 15.0921 7.37089 16.1796 7.76964" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.5333 10.3312C14.1737 10.1621 14.8383 10.1621 15.4787 10.3312" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.5 22.9583V26.5833" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+
+                     <button class="botao-icone" id="botao-enviar-wave" title="Enviar" type="button">
+                <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="17.5" cy="17.5" r="17.5" fill="white"/>
+                    <path d="M18 12V24M26 11V25M10 16V20M14 9V27M22 14V22" stroke="#FE29BB" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                </button>
+            </div>
+        </footer>
+ </main>
+    <script src="./assets/js/chat.js" defer></script>
+</body>
 </html>
