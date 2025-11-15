@@ -34,6 +34,7 @@ class GeminiService {
         this.outputAudioContext = new AudioContext({ sampleRate: 24000 });
         this.nextStartTime = 0;
         this.sources = new Set();
+        this.analyserNode = null; // Para integração com visualizações
         
         // Callbacks (serão configurados externamente)
         this.onStatusChange = null;
@@ -233,7 +234,14 @@ class GeminiService {
             // Toca áudio
             const source = this.outputAudioContext.createBufferSource();
             source.buffer = audioBuffer;
-            source.connect(this.outputAudioContext.destination);
+            
+            // Conecta ao destination (ou ao analyser se houver)
+            if (this.analyserNode) {
+                source.connect(this.analyserNode);
+            } else {
+                source.connect(this.outputAudioContext.destination);
+            }
+            
             source.addEventListener('ended', () => {
                 this.sources.delete(source);
             });
@@ -347,6 +355,29 @@ class GeminiService {
     _handleError(mensagem) {
         if (this.onError) {
             this.onError(mensagem);
+        }
+    }
+
+    /**
+     * Retorna o AudioContext de saída (para integração com visualizações)
+     * @returns {AudioContext}
+     */
+    getOutputAudioContext() {
+        return this.outputAudioContext;
+    }
+
+    /**
+     * Registra um AnalyserNode para interceptar o áudio de saída
+     * @param {AnalyserNode} analyser - Nó analyser para análise de áudio
+     */
+    registrarAnalyser(analyser) {
+        if (analyser && analyser instanceof AnalyserNode) {
+            this.analyserNode = analyser;
+            // Conecta analyser ao destination
+            this.analyserNode.connect(this.outputAudioContext.destination);
+            console.log('🎵 [GEMINI] Analyser registrado e conectado');
+        } else {
+            console.error('❌ [GEMINI] AnalyserNode inválido');
         }
     }
 }

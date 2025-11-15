@@ -49,13 +49,14 @@
 }
 
 .opcao-chat:hover {
-    background: var(--color-opcao-chat-background-hover);
+    background: var(--color-opcao-chat-principal-background-hover);
     transform: translateY(-4px);
 }
 
 .opcao-chat_icone {
     width: var(--size-icon-xl);
     height: var(--size-icon-xl);
+    color: var(--color-secondary-icon);
     border-radius: 42%;
     background: var( --color-secondary-background-icon);
     display: grid;
@@ -188,10 +189,49 @@
 .secao-duvidas_titulo {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
-    color: var(--color-white);
+    color: var(--color-primary-text);
     text-align: center;
     margin-bottom: var(--spacing-lg);
     width: 100%;
+}
+
+.container-carrossel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.carrossel-seta {
+    flex-shrink: 0;
+    width: calc(40px * var(--scale-factor));
+    height: calc(40px * var(--scale-factor));
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--color-primary-icon);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    z-index: 2;
+}
+
+.carrossel-seta:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.carrossel-seta:active {
+    transform: scale(0.95);
+}
+
+.carrossel-seta--esquerda.oculto,
+.carrossel-seta--direita.oculto {
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 .carrossel-duvidas {
@@ -207,10 +247,51 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     width: 100%;
+    position: relative;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 20px,
+        black calc(100% - 20px),
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 20px,
+        black calc(100% - 20px),
+        transparent
+    );
 }
 
 .carrossel-duvidas::-webkit-scrollbar {
     display: none;
+}
+
+.carrossel-indicadores {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    justify-content: center;
+}
+
+.indicador {
+    width: calc(8px * var(--scale-factor));
+    height: calc(8px * var(--scale-factor));
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--color-primary-text) 20%, transparent);
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.indicador:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.indicador.ativo {
+    background: var(--color-primary-text);
+    width: calc(24px * var(--scale-factor));
+    border-radius: calc(4px * var(--scale-factor));
 }
 
 .duvida-btn {
@@ -230,7 +311,7 @@
 
 .duvida-btn:hover {
     background: var(--color-opcao-chat-background-hover);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
 }
 
 .duvida-btn_icone {
@@ -242,7 +323,7 @@
     place-items: center;
     font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
-    color: var(--color-white);
+    color: var(--color-secondary-icon);
 }
 
 .duvida-btn_texto {
@@ -266,7 +347,7 @@
     border: 2px solid var(--color-opcao-chat-border);
     border-radius: var(--radius-full);
     padding: var(--spacing-md) var(--spacing-xl);
-    color: var(--color-white);
+    color: var(--color-primary-text);
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-semibold);
     display: flex;
@@ -291,7 +372,6 @@
    ======================================== */
 
 .secao-patrocinadores {
-    padding: var(--spacing-2xl) 0;
     overflow: hidden;
 }
 
@@ -311,27 +391,34 @@
 
 .marquee_track {
     display: flex;
-    gap: var(--spacing-2xl);
-    animation: marquee 10s linear infinite;
+    animation: marquee 20s linear infinite;
     will-change: transform;
+    width: max-content;
 }
 
 .marquee_logo {
     height: calc(60px * var(--scale-factor));
     width: auto;
+    margin-right: var(--spacing-2xl);
     object-fit: contain;
     transition: opacity var(--transition-base);
+    flex-shrink: 0;
 }
 
 .marquee_logo:hover {
     opacity: 1;
+    animation-play-state: paused;
+}
+
+.marquee:hover .marquee_track {
+    animation-play-state: paused;
 }
 
 @keyframes marquee {
-    0% {
+    from {
         transform: translateX(0);
     }
-    100% {
+    to {
         transform: translateX(-50%);
     }
 }
@@ -351,12 +438,13 @@
     width: calc(50px * var(--scale-factor));
     height: calc(50px * var(--scale-factor));
     border-radius: 50%;
-    background: var(--color-opcao-chat-background);
-    border: 1px solid var(--color-opcao-chat-border);
     display: grid;
     place-items: center;
-    color: var(--color-white);
+    color: var(--color-secondary-icon);
     transition: all var(--transition-base);
+}
+.rede-social-link svg {
+    fill: var(--color-secondary-icon);
 }
 
 .rede-social-link:hover {
@@ -378,13 +466,28 @@
         font-size: var(--font-size-2xl);
     }
 
+    .container-carrossel {
+        justify-content: center;
+    }
+
+    .carrossel-seta {
+        display: none;
+    }
+
+    .carrossel-indicadores {
+        display: none;
+    }
+
     .carrossel-duvidas {
         justify-content: center;
         flex-wrap: wrap;
         overflow-x: visible;
         padding: var(--spacing-xl);
-        width: auto;
-        max-width: 90%;
+        width: 100%;
+        max-width: 100%;
+        mask-image: none;
+        -webkit-mask-image: none;
+        margin: 0 auto;
     }
 
     .duvida-btn {

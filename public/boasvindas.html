@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/variables.css">
     <link rel="stylesheet" href="./assets/css/modal-boas-vindas.css">
+     <link rel="stylesheet" href="./assets/css/painel-acessibilidade.css">
+    <link rel="stylesheet" href="./assets/css/filtros-acessibilidade.css">
 </head>
 
 <body>
@@ -27,6 +29,26 @@
     -->
     <main id="modalBoasVindas" class="modal-boas-vindas" role="main" aria-labelledby="titulo-boas-vindas">
         <div class="modal-boas-vindas_conteudo">
+            <button 
+                class="botao-acessibilidade" 
+                aria-label="Opções de acessibilidade"
+                type="button">
+                
+                <svg width="1000" height="1000" viewBox="320 330 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M415.3 662.2C425.849 662.2 434.4 653.649 434.4 643.1C434.4 632.551 425.849 624 415.3 624C404.751 624 396.2 632.551 396.2 643.1C396.2 653.649 404.751 662.2 415.3 662.2Z" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M584.7 662.2C595.249 662.2 603.8 653.649 603.8 643.1C603.8 632.551 595.249 624 584.7 624C574.151 624 565.6 632.551 565.6 643.1C565.6 653.649 574.151 662.2 584.7 662.2Z" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M652 487.2C662.549 487.2 671.1 478.649 671.1 468.1C671.1 457.551 662.549 449 652 449C641.451 449 632.9 457.551 632.9 468.1C632.9 478.649 641.451 487.2 652 487.2Z" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M348 487.2C358.549 487.2 367.1 478.649 367.1 468.1C367.1 457.551 358.549 449 348 449C337.451 449 328.9 457.551 328.9 468.1C328.9 478.649 337.451 487.2 348 487.2Z" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M366.6 480.6C388.4 492.8 438.7 516.9 506.4 515.3C566.8 513.9 611.7 492.7 633.4 480.6" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M427.2 627.4C451.5 590.1 475.7 552.7 500 515.4" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M572.8 627.4C548.5 590.1 524.3 552.7 500 515.4" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M500 477.5C523.527 477.5 542.6 458.427 542.6 434.9C542.6 411.373 523.527 392.3 500 392.3C476.473 392.3 457.4 411.373 457.4 434.9C457.4 458.427 476.473 477.5 500 477.5Z" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M360.6 434.9C388.7 384.6 441.8 353.2 499.3 353C557.3 352.8 611.1 384.2 639.4 434.9" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M343.7 500C342.3 513.1 341.5 537.5 351.4 565.5C362 595.5 379.5 614.7 389.2 624" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M656.3 500C657.7 513.1 658.5 537.5 648.6 565.5C638 595.5 620.5 614.7 610.8 624" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M445.1 657.3C456.1 662.3 477.4 670.3 505.1 669.2C527.3 668.3 544.6 662 554.9 657.3" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                </svg>
+            </button>
             <header class="modal-boas-vindas_cabecalho">
                 <h1 id="titulo-boas-vindas" class="modal-boas-vindas_titulo">
                     Conheça o<br>
@@ -34,42 +56,22 @@
                 </h1>
             </header>
             
+
+            
             <div class="modal-boas-vindas_acao">
-                <button 
-                    id="botaoArrastar" 
-                    class="botao-arrastar" 
-                    aria-label="Deslize para começar"
-                    type="button">
-                    <div class="botao-arrastar_trilho">
-                        <div class="botao-arrastar_botao" id="botaoArrastarBotao">
-                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M30 55C43.8071 55 55 43.8071 55 30C55 16.1929 43.8071 5 30 5C16.1929 5 5 16.1929 5 30C5 43.8071 16.1929 55 30 55Z" stroke="#FE29BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M21.25 30H36.25" stroke="#FE29BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M31.25 37.5L38.75 30L31.25 22.5" stroke="#FE29BB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <span class="botao-arrastar_texto">Deslize para começar</span>
-                        <div class="botao-arrastar_setas" aria-hidden="true">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.94 13.28L10.2867 8.9333C10.8 8.41997 10.8 7.57997 10.2867 7.06664L5.94 2.71997" stroke="#3B018A" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.94 13.28L10.2867 8.9333C10.8 8.41997 10.8 7.57997 10.2867 7.06664L5.94 2.71997" stroke="#3B018A80" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.94 13.28L10.2867 8.9333C10.8 8.41997 10.8 7.57997 10.2867 7.06664L5.94 2.71997" stroke="#3B018A33" stroke-width="1.semic" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </button>
+                <a 
+                    href="./paginainicial.html" 
+                    class="botao-comecar"
+                    aria-label="Começar a usar o SenaChat">
+                    <span class="botao-comecar_texto">Começar</span>
+                    <svg class="botao-comecar_icone" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </main>
-    
-    <!-- 
-      Este script agora só será carregado nesta página 
-      e sua função mudará (veja abaixo).
-    -->
-    <script src="./assets/js/modal-boas-vindas.js"></script>
+
+     <script src="./assets/js/acessibilidade-global.js"></script>
 </body>
 </html>

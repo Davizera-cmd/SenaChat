@@ -22,7 +22,7 @@ except KeyError:
 
 GEMINI_CONFIG = {
     "model": "gemini-2.5-flash-native-audio-preview-09-2025",
-    "systemInstruction": """Você é o SenaChat, um assistente virtual amigável e prestativo do SENAC - JOVEM PROGRAMADOR. 
+    "systemInstruction": """Você é o Sena Chat, um assistente virtual amigável e prestativo do curso JOVEM PROGRAMADOR do SENAC.
     
 Seu papel é:
 - Ajudar estudantes com dúvidas sobre cursos e tecnologia
@@ -32,7 +32,7 @@ Seu papel é:
 
 Responda sempre de forma conversacional e natural.""",
     
-    "voiceName": "Orus",  # Voz masculina em português
+    "voiceName": "Orus", 
     "apiVersion": "v1alpha"
 }
 

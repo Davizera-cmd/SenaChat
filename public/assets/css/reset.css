@@ -1,6 +1,4 @@
-/* ========================================
-   Reset CSS - Normalização cross-browser
-   ======================================== */
+/* Padrão para todo o html */
 
 *,
 *::before,
@@ -15,10 +13,17 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
-    /* Remove highlight azul/cinza do toque no mobile */
     -webkit-tap-highlight-color: transparent;
+    overflow-y: scroll;
 }
 
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
 body {
     min-height: 100vh;
     line-height: 1.6;
@@ -46,14 +51,12 @@ button {
     border: none;
     background: none;
     cursor: pointer;
-    /* Remove highlight do toque */
     -webkit-tap-highlight-color: transparent;
 }
 
 a {
     color: inherit;
     text-decoration: none;
-    /* Remove highlight do toque */
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -78,6 +81,7 @@ ol {
 
 /* Remove animações para quem prefere movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -86,11 +90,28 @@ ol {
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
     }
-    
+
     /* Mantém transições de interação (hover, focus, active) */
     *:hover,
     *:focus,
     *:active {
         transition-duration: 0.15s !important;
     }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--color-primary-dark);    
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary-lighter);
+    border-radius: 10px;
 }

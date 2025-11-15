@@ -19,7 +19,7 @@ import GeminiService from './services/gemini-service.js';
     const indicadorAudio = document.getElementById('indicadorAudio');
     const statusGravacao = document.getElementById('statusGravacao');
     const botaoVoltar = document.querySelector('.botao-voltar');
-    const botaoAcessibilidade = document.querySelector('.botao-acessibilidade');
+    const textoInicial = document.querySelector('.texto-inicial');
 
     // ========================================
     // Serviço Gemini
@@ -27,12 +27,10 @@ import GeminiService from './services/gemini-service.js';
     
     const geminiService = new GeminiService();
     
-    // Configura callbacks
     geminiService.onStatusChange = atualizarStatus;
     geminiService.onError = mostrarErro;
     geminiService.onAudioReceived = (duracao) => {
-        // Futuramente: animar aurora pulsante aqui
-        console.log('Áudio recebido, duração:', duracao);
+        // Callback para quando áudio for recebido
     };
 
     // ========================================
@@ -40,20 +38,25 @@ import GeminiService from './services/gemini-service.js';
     // ========================================
     
     let estaGravando = false;
+    let jaMandouPrimeiroAudio = false;
 
     // ========================================
     // Inicialização
     // ========================================
     
     async function inicializar() {
-        // Event listeners
         botaoMicrofone.addEventListener('click', alternarGravacao);
         botaoVoltar.addEventListener('click', voltarParaInicio);
-        botaoAcessibilidade.addEventListener('click', abrirAcessibilidade);
 
-        // Inicializa sessão Gemini
         atualizarStatus('Inicializando...');
         await geminiService.inicializarSessao();
+
+        if (window.AureaAnimacao) {
+            const audioContext = geminiService.getOutputAudioContext();
+            if (audioContext) {
+                window.AureaAnimacao.conectarAudioContext(audioContext, geminiService);
+            }
+        }
     }
 
     // ========================================
@@ -75,6 +78,11 @@ import GeminiService from './services/gemini-service.js';
             estaGravando = true;
             botaoMicrofone.classList.add('gravando');
             indicadorAudio.classList.add('ativo');
+            
+            if (!jaMandouPrimeiroAudio && textoInicial) {
+                textoInicial.classList.add('oculto');
+                jaMandouPrimeiroAudio = true;
+            }
         }
     }
 
@@ -91,25 +99,13 @@ import GeminiService from './services/gemini-service.js';
     // ========================================
     
     function voltarParaInicio() {
-        // Para gravação se estiver ativa
         if (estaGravando) {
             pararGravacao();
         }
-        
-        // Volta para paginainicial.html
         window.location.href = './paginainicial.html';
     }
 
-    function abrirAcessibilidade() {
-        // Futuramente: abrir modal de acessibilidade
-        console.log('Abrir painel de acessibilidade');
-        alert('Painel de acessibilidade em desenvolvimento!');
-    }
-
-    // ========================================
-    // Feedback Visual
-    // ========================================
-    
+    // Feedback Visual    
     function atualizarStatus(mensagem) {
         statusGravacao.textContent = mensagem;
         statusGravacao.style.color = '';
@@ -124,10 +120,7 @@ import GeminiService from './services/gemini-service.js';
         }, 3000);
     }
 
-    // ========================================
     // Inicialização da Página
-    // ========================================
-    
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', inicializar);
     } else {

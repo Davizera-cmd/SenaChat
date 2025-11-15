@@ -1,0 +1,80 @@
+/* Filtros de Acessibilidade */
+
+/* ========================================
+   Filtros de Daltonismo
+   ======================================== */
+
+/* Protanopia (Deficiência de vermelho) */
+.filtro-protanopia {
+    filter: url('#protanopia-filter');
+}
+
+/* Deuteranopia (Deficiência de verde) */
+.filtro-deuteranopia {
+    filter: url('#deuteranopia-filter');
+}
+
+/* Tritanopia (Deficiência de azul) */
+.filtro-tritanopia {
+    filter: url('#tritanopia-filter');
+}
+
+/* ========================================
+   Alto Contraste
+   ======================================== */
+
+.alto-contraste {
+    filter: contrast(1.3) brightness(1.1);
+}
+
+/* Fallback para navegadores sem suporte a filtros SVG */
+@supports not (filter: url('#protanopia-filter')) {
+    .filtro-protanopia {
+        filter: grayscale(0.3) sepia(0.2) hue-rotate(-10deg);
+    }
+    
+    .filtro-deuteranopia {
+        filter: grayscale(0.3) sepia(0.2) hue-rotate(10deg);
+    }
+    
+    .filtro-tritanopia {
+        filter: grayscale(0.2) sepia(0.15) hue-rotate(-20deg);
+    }
+}
+
+/* ========================================
+   Filtros SVG (precisam ser injetados no HTML)
+   ======================================== */
+
+/* Os filtros SVG devem ser adicionados ao HTML como:
+<svg style="position: absolute; width: 0; height: 0;" aria-hidden="true">
+    <defs>
+        <!-- Protanopia -->
+        <filter id="protanopia-filter">
+            <feColorMatrix type="matrix" values="
+                0.567, 0.433, 0,     0, 0
+                0.558, 0.442, 0,     0, 0
+                0,     0.242, 0.758, 0, 0
+                0,     0,     0,     1, 0"/>
+        </filter>
+        
+        <!-- Deuteranopia -->
+        <filter id="deuteranopia-filter">
+            <feColorMatrix type="matrix" values="
+                0.625, 0.375, 0,   0, 0
+                0.7,   0.3,   0,   0, 0
+                0,     0.3,   0.7, 0, 0
+                0,     0,     0,   1, 0"/>
+        </filter>
+        
+        <!-- Tritanopia -->
+        <filter id="tritanopia-filter">
+            <feColorMatrix type="matrix" values="
+                0.95, 0.05,  0,     0, 0
+                0,    0.433, 0.567, 0, 0
+                0,    0.475, 0.525, 0, 0
+                0,    0,     0,     1, 0"/>
+        </filter>
+    </defs>
+</svg>
+*/

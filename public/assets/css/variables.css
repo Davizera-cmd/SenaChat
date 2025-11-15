@@ -9,9 +9,12 @@
     --color-primary-medium: #5A02BB;
     --color-primary-light: #7A01FF;
     --color-primary-lighter: #A78BFA;
+    --color-primary-text: #FFFFFF;
+
 
     /* Cores de Ícones e Bordas para os botões */
     --color-primary-icon: #FFFFFF;
+    --color-secondary-icon: #FFFFFF;
     --color-primary-border: rgba(255, 255, 255, 0.21);
     --color-primary-border-hover: rgba(255, 255, 255, 0.3);
     --color-primary-background-hover: rgba(255, 255, 255, 0.2);
@@ -19,6 +22,7 @@
 
     --color-opcao-chat-background: rgba(255, 255, 255, 0.05);
     --color-opcao-chat-background-hover: rgba(255, 255, 255, 0.1);
+    --color-opcao-chat-principal-background-hover: rgba(255, 255, 255, 0.1);
     --color-opcao-chat-border: rgba(255, 255, 255, 0.1);
   
     /* Cores de Destaque */
@@ -153,6 +157,66 @@
     --container-padding: 1rem;
 }
 
+/* ========================================
+   MODO CLARO
+   ======================================== */
+
+[data-theme="light"] {
+    /* Paleta de Cores - Modo Claro */
+    --color-primary-dark: #F5F3FF;
+    --color-primary: #EDE9FE;
+    --color-primary-medium: #DDD6FE;
+    --color-primary-light: #C4B5FD;
+    --color-primary-lighter: #A78BFA;
+    --color-primary-text: #7A01FF;
+
+    /* Cores de Ícones e Bordas para os botões */
+    --color-primary-icon: #7A01FF;
+    --color-secondary-icon: #FE29BB;
+    --color-primary-border: rgba(122, 1, 255, 0.21);
+    --color-primary-border-hover: rgba(122, 1, 255, 0.3);
+    --color-primary-background-hover: rgba(122, 1, 255, 0.1);
+    --color-secondary-background-icon: #DDD6FE;
+
+    --color-opcao-chat-background: rgba(122, 1, 255, 0.05);
+    --color-opcao-chat-background-hover: rgba(122, 1, 255, 0.1);
+    --color-opcao-chat-principal-background-hover: rgba(122, 1, 255, 0.2);
+    --color-opcao-chat-border: rgba(122, 1, 255, 0.1);
+  
+    /* Cores de Destaque - Mantém as mesmas */
+    --color-accent-pink: #FE29BB;
+    --color-accent-purple: #8C5AD5;
+    --color-accent-purple-dark: #6B3EB0;
+    --color-accent-light: #D0B6F3;
+    
+    /* Gradiente Principal - Fundo Claro */
+    --gradient-primary: radial-gradient(50% 50% at 50% 50%, #EDE9FE 0%, #F5F3FF 100%);
+    --gradient-primary-hover: radial-gradient(circle at center, #DDD6FE 0%, #EDE9FE 100%);
+    
+    /* Gradiente Título SenaChat - Mantém */
+    --gradient-title: linear-gradient(135deg, #7A01FF 0%, #FE29BB 100%);
+    
+    /* Gradiente Botão Rosa - Mantém */
+    --gradient-button-pink: linear-gradient(135deg, #EC4899 0%, #F97316 100%);
+    
+    /* Gradiente Sucesso */
+    --gradient-success: linear-gradient(135deg, #8C5AD5 0%, #6B3EB0 100%);
+    --gradient-success-bg: linear-gradient(90deg, rgba(128, 90, 213, 0.2) 0%, rgba(128, 90, 213, 0.05) 100%);
+    
+    /* Cores Neutras - Invertidas */
+    --color-white: #1A0145;
+    --color-gray-900: #F9FAFB;
+    --color-gray-800: #F3F4F6;
+    --color-gray-700: #E5E7EB;
+    --color-gray-600: #D1D5DB;
+    --color-gray-500: #9CA3AF;
+    --color-gray-400: #6B7280;
+    --color-gray-300: #4B5563;
+    --color-gray-200: #374151;
+    --color-gray-100: #1F2937;
+    --color-gray-50: #111827;
+}
+
 /* Ajustes para Desktop */
 @media (min-width: 768px) {
     :root {
@@ -163,3 +227,4 @@
         --container-padding: calc(2rem * var(--scale-factor));
     }
 }
+

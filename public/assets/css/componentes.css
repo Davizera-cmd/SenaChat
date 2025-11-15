@@ -24,27 +24,29 @@
     width: var(--size-icon-md);
     height: var(--size-icon-md);
     border-radius: 50%;
-    backdrop-filter: blur(10px);
     border: 1.5px solid var(--color-primary-border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     color: var(--color-primary-icon);
-    transition: all var(--transition-base);
+    transition: background var(--transition-base),
+        border-color var(--transition-base),
+        transform var(--transition-base);
+    will-change: transform;
 }
 
 .botao-acessibilidade {
     width: var(--size-icon-md);
     height: var(--size-icon-md);
     border-radius: 50%;
-    backdrop-filter: blur(10px);
     border: 1.5px solid var(--color-primary-border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     color: var(--color-primary-icon);
-    transition: all var(--transition-base);
+    transition: background var(--transition-base),
+        border-color var(--transition-base),
+        transform var(--transition-base);
     flex-shrink: 0;
+    will-change: transform;
 }
 
 .botao-voltar:hover,
@@ -59,9 +61,18 @@
 }
 
 .botao-acessibilidade svg path {
-    stroke: white;
     fill: none;
-} 
+}
+
+.botao-acessibilidade svg {
+    width: 90%;
+    height: 90%;
+}
+
+.botao-voltar svg {
+    width: 40%;
+    height: 40%;
+}
 
 .botao-voltar:active,
 .botao-acessibilidade:active {
