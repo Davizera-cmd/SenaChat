@@ -93,6 +93,13 @@ def home():
         }
     })
 
+from flask import send_from_directory
+
+@app.route('/public/<path:filename>')
+def serve_public(filename):
+    return send_from_directory('public', filename)
+
+
 # ========================================
 # Inicialização
 # ========================================
