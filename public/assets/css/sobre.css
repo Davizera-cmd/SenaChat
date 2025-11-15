@@ -1,0 +1,465 @@
+.pagina-sobre {
+    min-height: 100vh;
+    background: var(--gradient-primary);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* ========================================
+   UTILITÁRIOS
+   ======================================== */
+.destaque-gradiente {
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: var(--font-weight-bold);
+}
+
+/* ========================================
+   ÍCONES DE TÍTULO
+   ======================================== */
+.icone-lightbulb,
+.icone-rocket,
+.icone-team {
+    color: var(--color-accent-pink);
+    flex-shrink: 0;
+}
+
+/* ========================================
+   SEÇÃO: A GÊNESE DO PROJETO
+   ======================================== */
+.secao-projeto {
+    padding: var(--spacing-3xl) 0;
+    margin-top: var(--spacing-2xl);
+}
+
+.secao-projeto_cabecalho {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.secao-projeto_icone-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.secao-projeto_titulo {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-sobre-texto-principal);
+    line-height: 1.2;
+}
+
+.secao-projeto_conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.secao-projeto_texto {
+    font-size: var(--font-size-lg);
+    color: var(--color-sobre-texto-secundario);
+    text-align: justify;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Card de Destaque */
+.card-destaque {
+    background: var(--color-sobre-card-bg);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--color-sobre-card-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    text-align: center;
+    transition: all var(--transition-base);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.card-destaque:hover {
+    background: var(--color-sobre-card-bg-hover);
+    border-color: var(--color-sobre-card-border-hover);
+    transform: translateY(-4px);
+}
+
+.card-destaque_icone {
+    width: var(--size-svg-lg);
+    height: var(--size-svg-lg);
+    color: var(--color-accent-pink);
+    margin-bottom: var(--spacing-lg);
+}
+
+.card-destaque_titulo {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-sobre-texto-principal);
+    margin-bottom: var(--spacing-md);
+}
+
+.card-destaque_descricao {
+    font-size: var(--font-size-lg);
+    color: var(--color-sobre-texto-secundario);
+    line-height: 1.6;
+}
+
+/* Fluxo Técnico */
+.fluxo-tecnico {
+    background: var(--color-sobre-card-bg);
+    border: 2px solid var(--color-sobre-card-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.fluxo-tecnico_cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.fluxo-tecnico_titulo {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-sobre-texto-principal);
+}
+
+.fluxo-tecnico_etapas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.fluxo-tecnico_seta {
+    color: var(--color-accent-pink);
+    opacity: 0.7;
+    transform: rotate(90deg);
+}
+
+.etapa-tecnica {
+    background: var(--color-sobre-card-bg);
+    border: 2px solid var(--color-sobre-card-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transition: all var(--transition-base);
+}
+
+.etapa-tecnica:hover {
+    background: var(--color-sobre-card-bg-hover);
+    border-color: var(--color-accent-pink);
+    transform: scale(1.05);
+}
+
+.etapa-tecnica_icone {
+    width: var(--size-svg-md);
+    height: var(--size-svg-md);
+    color: var(--color-accent-purple);
+    margin-bottom: var(--spacing-md);
+}
+
+.etapa-tecnica_nome {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-sobre-texto-principal);
+    margin-bottom: var(--spacing-sm);
+}
+
+.etapa-tecnica_descricao {
+    font-size: var(--font-size-base);
+    color: var(--color-sobre-texto-secundario);
+    line-height: 1.5;
+}
+
+/* ========================================
+   SEÇÃO: A EQUIPE
+   ======================================== */
+.secao-equipe {
+    padding: var(--spacing-3xl) 0;
+    background: var(--color-sobre-secao-bg);
+}
+
+.secao-equipe_cabecalho {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.secao-equipe_icone-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.secao-equipe_titulo {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-sobre-texto-principal);
+    line-height: 1.2;
+}
+
+.secao-equipe_descricao {
+    font-size: var(--font-size-lg);
+    color: var(--color-sobre-texto-secundario);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Grid de Equipe */
+.grid-equipe {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card de Membro */
+.card-membro {
+    background: var(--color-sobre-card-bg);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--color-sobre-card-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-lg);
+    transition: all var(--transition-base);
+    position: relative; /* necessário para posicionar o ícone LinkedIn */
+}
+
+.card-membro:hover {
+    background: var(--color-sobre-card-bg-hover);
+    border-color: var(--color-sobre-card-border-hover);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(254, 41, 187, 0.2);
+}
+
+/* Ícone LinkedIn no canto superior direito do card */
+.card-membro_linkedin {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: inline-grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    color: var(--color-sobre-texto-principal);
+    background: transparent;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.card-membro_linkedin svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+}
+
+.card-membro_linkedin:hover,
+.card-membro_linkedin:focus {
+    background: rgba(0,0,0,0.06);
+    border-color: rgba(0,0,0,0.08);
+    outline: none;
+}
+
+/* Ajustes para modo claro — garantir contraste do ícone */
+[data-theme="light"] .card-membro_linkedin {
+    color: var(--color-sobre-texto-principal);
+}
+
+.card-membro_foto {
+    width: var(--size-icon-2xl);
+    height: var(--size-icon-2xl);
+    border-radius: var(--radius-full);
+    background: var(--color-sobre-card-bg);
+    border: 3px solid var(--color-accent-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.card-membro_avatar {
+    width: var(--size-svg-xl);
+    height: var(--size-svg-xl);
+    color: var(--color-sobre-texto-principal);
+}
+
+.card-membro_info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.card-membro_nome {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-sobre-texto-principal);
+}
+
+.card-membro_funcao {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-accent-pink);
+    margin-bottom: var(--spacing-sm);
+}
+
+.card-membro_frase {
+    font-size: var(--font-size-base);
+    color: var(--color-sobre-texto-secundario);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVIDADE - TABLET
+   ======================================== */
+@media (min-width: 768px) {
+    .secao-projeto_icone-titulo,
+    .secao-equipe_icone-titulo {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .secao-projeto_titulo,
+    .secao-equipe_titulo {
+        font-size: var(--font-size-4xl);
+    }
+
+    .fluxo-tecnico_etapas {
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--spacing-xl);
+    }
+
+    .fluxo-tecnico_seta {
+        transform: rotate(0deg);
+    }
+
+    .grid-equipe {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-2xl);
+    }
+
+    .card-membro {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .card-membro_foto {
+        width: var(--size-icon-3xl);
+        height: var(--size-icon-3xl);
+    }
+
+    .card-membro_avatar {
+        width: var(--size-svg-2xl);
+        height: var(--size-svg-2xl);
+    }
+}
+
+/* ========================================
+   RESPONSIVIDADE - DESKTOP
+   ======================================== */
+@media (min-width: 1024px) {
+    .secao-projeto_titulo,
+    .secao-equipe_titulo {
+        font-size: var(--font-size-5xl);
+    }
+
+    .secao-projeto_texto,
+    .secao-equipe_descricao {
+        font-size: var(--font-size-xl);
+    }
+
+    .card-destaque_titulo {
+        font-size: var(--font-size-3xl);
+    }
+
+    .card-destaque_descricao {
+        font-size: var(--font-size-xl);
+    }
+
+    .fluxo-tecnico_titulo {
+        font-size: var(--font-size-3xl);
+    }
+
+    .etapa-tecnica_nome {
+        font-size: var(--font-size-2xl);
+    }
+
+    .etapa-tecnica_descricao {
+        font-size: var(--font-size-lg);
+    }
+
+    .grid-equipe {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   RESPONSIVIDADE - LARGE DESKTOP
+   ======================================== */
+@media (min-width: 1440px) {
+    .grid-equipe {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   ACESSIBILIDADE
+   ======================================== */
+
+/* Foco Visível */
+.card-destaque:focus,
+.card-membro:focus,
+.etapa-tecnica:focus {
+    outline: 3px solid var(--color-accent-pink);
+    outline-offset: 4px;
+}
+
+/* Redução de Movimento */
+@media (prefers-reduced-motion: reduce) {
+    .card-destaque,
+    .card-membro,
+    .etapa-tecnica,
+    .fluxo-tecnico_seta {
+        transition: none;
+        animation: none;
+    }
+
+    .card-destaque:hover,
+    .card-membro:hover,
+    .etapa-tecnica:hover {
+        transform: none;
+    }
+}

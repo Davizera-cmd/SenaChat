@@ -8,6 +8,7 @@
 
     const PAINEL_HTML_PATH = './assets/html/painel-acessibilidade.html';
     const STORAGE_KEY = 'senachat-acessibilidade';
+    const PAINEL_OPEN_KEY = 'senachat-acessibilidade-painel-aberto';
     
     // Estado da acessibilidade
     let estadoAtual = {
@@ -83,6 +84,16 @@
             
             inicializarPainel();
             atualizarUIParaEstadoAtual();
+            // Se o usuário deixou o painel aberto em navegações anteriores, mantê-lo aberto
+            try {
+                if (localStorage.getItem(PAINEL_OPEN_KEY) === '1') {
+                    const painel = document.getElementById('painelAcessibilidade');
+                    if (painel) painel.classList.add('ativo');
+                }
+            } catch (e) {
+                // localStorage pode falhar em ambientes restritos; ignorar sem quebrar
+                console.warn('[Acessibilidade] Não foi possível ler estado do painel:', e);
+            }
         } catch (error) {
             console.error('[Acessibilidade] Erro ao carregar painel:', error);
         }
@@ -133,10 +144,12 @@
 
         function abrirPainel() {
             painel.classList.add('ativo');
+            try { localStorage.setItem(PAINEL_OPEN_KEY, '1'); } catch (e) { /* ignore */ }
         }
 
         function fecharPainel() {
             painel.classList.remove('ativo');
+            try { localStorage.removeItem(PAINEL_OPEN_KEY); } catch (e) { /* ignore */ }
         }
 
         botoesAbrir.forEach(botao => {
@@ -148,19 +161,8 @@
 
         botaoFechar.addEventListener('click', fecharPainel);
 
-        document.addEventListener('click', (e) => {
-            if (painel.classList.contains('ativo') && 
-                !conteudo.contains(e.target) && 
-                !Array.from(botoesAbrir).some(btn => btn.contains(e.target))) {
-                fecharPainel();
-            }
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && painel.classList.contains('ativo')) {
-                fecharPainel();
-            }
-        });
+        // Intencionalmente NÃO fecha o painel ao clicar fora ou ao pressionar Escape.
+        // O objetivo é que o usuário mantenha o painel aberto até fechar manualmente com o botão X.
 
         opcoes.forEach(opcao => {
             opcao.addEventListener('click', () => {
@@ -370,11 +372,17 @@
     window.Acessibilidade = {
         abrir: () => {
             const painel = document.getElementById('painelAcessibilidade');
-            if (painel) painel.classList.add('ativo');
+            if (painel) {
+                painel.classList.add('ativo');
+                try { localStorage.setItem(PAINEL_OPEN_KEY, '1'); } catch (e) { /* ignore */ }
+            }
         },
         fechar: () => {
             const painel = document.getElementById('painelAcessibilidade');
-            if (painel) painel.classList.remove('ativo');
+            if (painel) {
+                painel.classList.remove('ativo');
+                try { localStorage.removeItem(PAINEL_OPEN_KEY); } catch (e) { /* ignore */ }
+            }
         },
         getEstado: () => estadoAtual,
         setTema: (tema) => alterarTema(tema)

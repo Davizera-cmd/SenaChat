@@ -45,6 +45,15 @@
     --gradient-success: linear-gradient(135deg, #8C5AD5 0%, #6B3EB0 100%);
     --gradient-success-bg: linear-gradient(90deg, rgba(128, 90, 213, 0.3) 0%, rgba(128, 90, 213, 0.1) 100%);
     
+    /* Cores para Página Sobre - Modo Escuro */
+    --color-sobre-texto-principal: #FFFFFF;
+    --color-sobre-texto-secundario: rgba(255, 255, 255, 0.9);
+    --color-sobre-card-bg: rgba(255, 255, 255, 0.1);
+    --color-sobre-card-bg-hover: rgba(255, 255, 255, 0.15);
+    --color-sobre-card-border: rgba(255, 255, 255, 0.21);
+    --color-sobre-card-border-hover: rgba(254, 41, 187, 0.5);
+    --color-sobre-secao-bg: rgba(0, 0, 0, 0.2);
+    
     /* Cores Neutras */
     --color-white: #FFFFFF;
     --color-gray-50: #F9FAFB;
@@ -202,6 +211,15 @@
     /* Gradiente Sucesso */
     --gradient-success: linear-gradient(135deg, #8C5AD5 0%, #6B3EB0 100%);
     --gradient-success-bg: linear-gradient(90deg, rgba(128, 90, 213, 0.2) 0%, rgba(128, 90, 213, 0.05) 100%);
+    
+    /* Cores para Página Sobre - Modo Claro */
+    --color-sobre-texto-principal: #1A0145;
+    --color-sobre-texto-secundario: #3B018A;
+    --color-sobre-card-bg: rgba(122, 1, 255, 0.08);
+    --color-sobre-card-bg-hover: rgba(122, 1, 255, 0.15);
+    --color-sobre-card-border: rgba(122, 1, 255, 0.25);
+    --color-sobre-card-border-hover: rgba(254, 41, 187, 0.6);
+    --color-sobre-secao-bg: rgba(122, 1, 255, 0.05);
     
     /* Cores Neutras - Invertidas */
     --color-white: #1A0145;

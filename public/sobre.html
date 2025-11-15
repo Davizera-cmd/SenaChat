@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SenaChat - Seu assistente virtual inteligente">
+    <meta name="theme-color" content="#6B21A8">
+    <title>SenaChat - Assistente Virtual Inteligente</title>
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/componentes.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/variables.css">
+    <link rel="stylesheet" href="./assets/css/painel-acessibilidade.css">
+    <link rel="stylesheet" href="./assets/css/filtros-acessibilidade.css">
+    <link rel="stylesheet" href="./assets/css/sobre.css">
+</head>
+<body>
+     <!-- Conteúdo Principal da Home (começa oculto) -->
+     <main class="pagina-sobre">
+        
+        <!-- Cabeçalho (Padrão voz.html) -->
+        <header class="cabecalho">
+            <a href="paginainicial.html" aria-label="Voltar para a página de boas vindas">
+                <button 
+                    class="botao-voltar" 
+                    type="button">
+                    <svg width="10" height="19" viewBox="0 0 10 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.25667 17.8117L0.75 9.28083L9.25667 0.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </a>
+
+            <h1 class="logo-senachat">SenaChat</h1> 
+
+            <button 
+                class="botao-acessibilidade" 
+                aria-label="Opções de acessibilidade"
+                type="button">
+            
+                <svg width="1000" height="1000" viewBox="320 330 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M415.3 662.2C425.849 662.2 434.4 653.649 434.4 643.1C434.4 632.551 425.849 624 415.3 624C404.751 624 396.2 632.551 396.2 643.1C396.2 653.649 404.751 662.2 415.3 662.2Z" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M584.7 662.2C595.249 662.2 603.8 653.649 603.8 643.1C603.8 632.551 595.249 624 584.7 624C574.151 624 565.6 632.551 565.6 643.1C565.6 653.649 574.151 662.2 584.7 662.2Z" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M652 487.2C662.549 487.2 671.1 478.649 671.1 468.1C671.1 457.551 662.549 449 652 449C641.451 449 632.9 457.551 632.9 468.1C632.9 478.649 641.451 487.2 652 487.2Z" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M348 487.2C358.549 487.2 367.1 478.649 367.1 468.1C367.1 457.551 358.549 449 348 449C337.451 449 328.9 457.551 328.9 468.1C328.9 478.649 337.451 487.2 348 487.2Z" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M366.6 480.6C388.4 492.8 438.7 516.9 506.4 515.3C566.8 513.9 611.7 492.7 633.4 480.6" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M427.2 627.4C451.5 590.1 475.7 552.7 500 515.4" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M572.8 627.4C548.5 590.1 524.3 552.7 500 515.4" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M500 477.5C523.527 477.5 542.6 458.427 542.6 434.9C542.6 411.373 523.527 392.3 500 392.3C476.473 392.3 457.4 411.373 457.4 434.9C457.4 458.427 476.473 477.5 500 477.5Z" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M360.6 434.9C388.7 384.6 441.8 353.2 499.3 353C557.3 352.8 611.1 384.2 639.4 434.9" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M343.7 500C342.3 513.1 341.5 537.5 351.4 565.5C362 595.5 379.5 614.7 389.2 624" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M656.3 500C657.7 513.1 658.5 537.5 648.6 565.5C638 595.5 620.5 614.7 610.8 624" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                    <path d="M445.1 657.3C456.1 662.3 477.4 670.3 505.1 669.2C527.3 668.3 544.6 662 554.9 657.3" stroke="currentColor" stroke-width="8" stroke-miterlimit="10"/>
+                </svg>
+                
+        </button>
+        </header>
+
+
+
+        <!-- Seção: A Gênese do Projeto -->
+        <section class="secao-projeto">
+            <div class="container">
+                <header class="secao-projeto_cabecalho">
+                    <div class="secao-projeto_icone-titulo">
+                        <svg class="icone-lightbulb" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M9 21H15M12 3C8.68629 3 6 5.68629 6 9C6 11.1756 7.14864 13.0711 8.86852 14.2056C9.12646 14.3732 9.25 14.6711 9.25 15V16C9.25 16.4142 9.58579 16.75 10 16.75H14C14.4142 16.75 14.75 16.4142 14.75 16V15C14.75 14.6711 14.8735 14.3732 15.1315 14.2056C16.8514 13.0711 18 11.1756 18 9C18 5.68629 15.3137 3 12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h2 class="secao-projeto_titulo">
+                            Nascido no <span class="destaque-gradiente">Jovem Programador</span>
+                        </h2>
+                    </div>
+                </header>
+
+                <div class="secao-projeto_conteudo">
+                    <p class="secao-projeto_texto">
+                        O SenaChat é o resultado do Projeto Integrador do curso Jovem Programador. 
+                        Nosso objetivo era aplicar os conhecimentos de Inteligência Artificial e 
+                        Desenvolvimento Web para criar uma ferramenta prática que auxilie futuros 
+                        alunos a tirar dúvidas sobre o curso, de forma rápida e precisa.
+                    </p>
+
+                  
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: A Equipe -->
+        <section class="secao-equipe">
+            <div class="container">
+                <header class="secao-equipe_cabecalho">
+                    <div class="secao-equipe_icone-titulo">
+                        <svg class="icone-team" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h2 class="secao-equipe_titulo">
+                            A Equipe de Alunos do <span class="destaque-gradiente">Jovem Programador</span>
+                        </h2>
+                    </div>
+                    <p class="secao-equipe_descricao">
+                        Somos um time dedicado, utilizando tecnologias de ponta para desenvolver 
+                        o futuro da interação digital. Conheça os desenvolvedores:
+                    </p>
+                </header>
+
+                <div class="grid-equipe">
+                    <!-- Membro 1 -->
+                    <article class="card-membro">
+                        <a class="card-membro_linkedin" href="#" aria-label="LinkedIn do desenvolvedor" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g clip-path="url(#clip0_22_196_1)">
+                <path d="M20.3715 0H1.62422C0.726172 0 0 0.708984 0 1.58555V20.4102C0 21.2867 0.726172 22 1.62422 22H20.3715C21.2695 22 22 21.2867 22 20.4145V1.58555C22 0.708984 21.2695 0 20.3715 0ZM6.52695 18.7473H3.26133V8.2457H6.52695V18.7473ZM4.89414 6.81484C3.8457 6.81484 2.99922 5.96836 2.99922 4.92422C2.99922 3.88008 3.8457 3.03359 4.89414 3.03359C5.93828 3.03359 6.78477 3.88008 6.78477 4.92422C6.78477 5.96406 5.93828 6.81484 4.89414 6.81484ZM18.7473 18.7473H15.4859V13.6426C15.4859 12.4266 15.4645 10.8582 13.7887 10.8582C12.0914 10.8582 11.8336 12.1859 11.8336 13.5566V18.7473H8.57656V8.2457H11.7047V9.68086H11.7477C12.1816 8.85586 13.2473 7.98359 14.8328 7.98359C18.1371 7.98359 18.7473 10.1578 18.7473 12.9852V18.7473Z" fill="currentColor"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_22_196_1">
+                <rect width="22" height="22" fill="currentColor"/>
+                </clipPath>
+                </defs>
+            </svg>
+                        </a>
+                        <div class="card-membro_foto">
+                            <svg class="card-membro_avatar" width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6 21C6 17.134 8.68629 14 12 14C15.3137 14 18 17.134 18 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="card-membro_info">
+                            <h3 class="card-membro_nome">Desenvolvedor 1</h3>
+                            <p class="card-membro_funcao">Front-end / UX</p>
+                            <p class="card-membro_frase">
+                                "Meu foco é na experiência: o chatbot deve ser fácil para todos."
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Membro 2 -->
+                    <article class="card-membro">
+                        <a class="card-membro_linkedin" href="#" aria-label="LinkedIn do desenvolvedor" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g clip-path="url(#clip0_22_196_2)">
+                <path d="M20.3715 0H1.62422C0.726172 0 0 0.708984 0 1.58555V20.4102C0 21.2867 0.726172 22 1.62422 22H20.3715C21.2695 22 22 21.2867 22 20.4145V1.58555C22 0.708984 21.2695 0 20.3715 0ZM6.52695 18.7473H3.26133V8.2457H6.52695V18.7473ZM4.89414 6.81484C3.8457 6.81484 2.99922 5.96836 2.99922 4.92422C2.99922 3.88008 3.8457 3.03359 4.89414 3.03359C5.93828 3.03359 6.78477 3.88008 6.78477 4.92422C6.78477 5.96406 5.93828 6.81484 4.89414 6.81484ZM18.7473 18.7473H15.4859V13.6426C15.4859 12.4266 15.4645 10.8582 13.7887 10.8582C12.0914 10.8582 11.8336 12.1859 11.8336 13.5566V18.7473H8.57656V8.2457H11.7047V9.68086H11.7477C12.1816 8.85586 13.2473 7.98359 14.8328 7.98359C18.1371 7.98359 18.7473 10.1578 18.7473 12.9852V18.7473Z" fill="currentColor"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_22_196_2">
+                <rect width="22" height="22" fill="currentColor"/>
+                </clipPath>
+                </defs>
+            </svg>
+                        </a>
+                        <div class="card-membro_foto">
+                            <svg class="card-membro_avatar" width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6 21C6 17.134 8.68629 14 12 14C15.3137 14 18 17.134 18 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="card-membro_info">
+                            <h3 class="card-membro_nome">Desenvolvedor 2</h3>
+                            <p class="card-membro_funcao">Back-end / API</p>
+                            <p class="card-membro_frase">
+                                "Eu garanto que a IA leia e interprete o site com a maior precisão possível."
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Membro 3 -->
+                    <article class="card-membro">
+                        <a class="card-membro_linkedin" href="#" aria-label="LinkedIn do desenvolvedor" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g clip-path="url(#clip0_22_196_3)">
+                <path d="M20.3715 0H1.62422C0.726172 0 0 0.708984 0 1.58555V20.4102C0 21.2867 0.726172 22 1.62422 22H20.3715C21.2695 22 22 21.2867 22 20.4145V1.58555C22 0.708984 21.2695 0 20.3715 0ZM6.52695 18.7473H3.26133V8.2457H6.52695V18.7473ZM4.89414 6.81484C3.8457 6.81484 2.99922 5.96836 2.99922 4.92422C2.99922 3.88008 3.8457 3.03359 4.89414 3.03359C5.93828 3.03359 6.78477 3.88008 6.78477 4.92422C6.78477 5.96406 5.93828 6.81484 4.89414 6.81484ZM18.7473 18.7473H15.4859V13.6426C15.4859 12.4266 15.4645 10.8582 13.7887 10.8582C12.0914 10.8582 11.8336 12.1859 11.8336 13.5566V18.7473H8.57656V8.2457H11.7047V9.68086H11.7477C12.1816 8.85586 13.2473 7.98359 14.8328 7.98359C18.1371 7.98359 18.7473 10.1578 18.7473 12.9852V18.7473Z" fill="currentColor"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_22_196_3">
+                <rect width="22" height="22" fill="currentColor"/>
+                </clipPath>
+                </defs>
+            </svg>
+                        </a>
+                        <div class="card-membro_foto">
+                            <svg class="card-membro_avatar" width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6 21C6 17.134 8.68629 14 12 14C15.3137 14 18 17.134 18 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="card-membro_info">
+                            <h3 class="card-membro_nome">Desenvolvedor 3</h3>
+                            <p class="card-membro_funcao">UI/Designer / Acessibilidade</p>
+                            <p class="card-membro_frase">
+                                "A inclusão digital é fundamental. Implementamos recursos para que todos possam usar o SenaChat."
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Membro 4 -->
+                    <article class="card-membro">
+                        <a class="card-membro_linkedin" href="#" aria-label="LinkedIn do desenvolvedor" target="_blank" rel="noopener noreferrer">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g clip-path="url(#clip0_22_196_4)">
+                <path d="M20.3715 0H1.62422C0.726172 0 0 0.708984 0 1.58555V20.4102C0 21.2867 0.726172 22 1.62422 22H20.3715C21.2695 22 22 21.2867 22 20.4145V1.58555C22 0.708984 21.2695 0 20.3715 0ZM6.52695 18.7473H3.26133V8.2457H6.52695V18.7473ZM4.89414 6.81484C3.8457 6.81484 2.99922 5.96836 2.99922 4.92422C2.99922 3.88008 3.8457 3.03359 4.89414 3.03359C5.93828 3.03359 6.78477 3.88008 6.78477 4.92422C6.78477 5.96406 5.93828 6.81484 4.89414 6.81484ZM18.7473 18.7473H15.4859V13.6426C15.4859 12.4266 15.4645 10.8582 13.7887 10.8582C12.0914 10.8582 11.8336 12.1859 11.8336 13.5566V18.7473H8.57656V8.2457H11.7047V9.68086H11.7477C12.1816 8.85586 13.2473 7.98359 14.8328 7.98359C18.1371 7.98359 18.7473 10.1578 18.7473 12.9852V18.7473Z" fill="currentColor"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_22_196_4">
+                <rect width="22" height="22" fill="currentColor"/>
+                </clipPath>
+                </defs>
+            </svg>
+                        </a>
+                        <div class="card-membro_foto">
+                            <svg class="card-membro_avatar" width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6 21C6 17.134 8.68629 14 12 14C15.3137 14 18 17.134 18 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="card-membro_info">
+                            <h3 class="card-membro_nome">Desenvolvedor 4</h3>
+                            <p class="card-membro_funcao">Gerente de Projeto</p>
+                            <p class="card-membro_frase">
+                                "Nosso desafio é entregar uma solução real e pronta para ser implementada."
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="./assets/js/acessibilidade-global.js"></script>
+</body>
+</html>
